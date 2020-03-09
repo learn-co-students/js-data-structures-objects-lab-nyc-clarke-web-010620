@@ -1,5 +1,6 @@
 describe('drivers', function() {
   describe('updateDriverWithKeyAndValue(driver, key, value)', function () {
+    this.timeout(0)
     beforeEach(function () {
       for (const key in driver) {
         delete driver[key];
@@ -23,6 +24,7 @@ describe('drivers', function() {
   });
 
   describe('destructivelyUpdateDriverWithKeyAndValue(driver, key, value)', function () {
+    this.timeout(0)
     it('updates `driver` with the given `key` and `value` (it is destructive) and returns the entire updated driver', function () {
       expect(destructivelyUpdateDriverWithKeyAndValue(driver, 'address', '12 Broadway')).to.eql({
         name: 'Sam',
@@ -37,6 +39,7 @@ describe('drivers', function() {
   });
 
   describe('deleteFromDriverByKey(driver, key)', function () {
+    this.timeout(0)
     it('deletes `key` from a clone of driver and returns the new driver (it is non-destructive)', function () {
       let newdriver = deleteFromDriverByKey(driver, 'name');
 
@@ -52,6 +55,7 @@ describe('drivers', function() {
   });
 
   describe('destructivelyDeleteFromDriverByKey(driver, key)', function () {
+    this.timeout(0)
     it('returns driver without the delete key/value pair', function () {
       let newdriver = destructivelyDeleteFromDriverByKey(driver, 'name');
 
